@@ -1,0 +1,35 @@
+<%@page import="java.util.List"%>
+<%@page import="frb.edu.br.infra.model.Cidade"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h4>Lista de Cidades Cadastradas</h4>
+	<table border="1">
+		<tr>
+			<th>Identificação <h:outputLabel value="IDENTIFICAÇÃO"/></th>
+			<th>Nome  <h:outputLabel value="NOME"/></th>
+			<th>Estado  <h:outputLabel value="ESTADO"/></th>
+			<th>Excluir  <h:outputLabel value="EXCLUIR"/></th>
+		</tr>
+		
+			List<Cidade> cidades = (List<Cidade>) request.getAttribute("lista");
+		
+		<tr>
+			<td><%=c.getId()%></td>
+			<td><%=c.getNome()%></td>
+			<td><%=c.getEstado()%></td>
+			<td><a href="sistema?logica=ExcluirCidade&id=<%=c.getId()%>">X</a></td>
+		</tr>
+		
+	</table>
+
+	<br>
+	
+</body>
+</html>
